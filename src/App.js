@@ -2,13 +2,7 @@ import React from 'react';
 import HomePage from './pages/homePage/homePage.component'
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
-import ShopPage from './pages/shopPage/shop.component'
-
-const HatsPage = () => (
-  <div>
-    <h1>Hatpage</h1>
-  </div>
-)
+import ShopPage from './pages/shopPage/shopPage.component'
 
 function App() {
   return (
