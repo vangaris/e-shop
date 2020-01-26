@@ -3,7 +3,6 @@ import 'firebase/firestore' //add only this two
 import 'firebase/auth'
 
 const config = {
-
     apiKey: "AIzaSyBX7JpBaHcmyhowEatbCkGpzHRAjOt6plo",
     authDomain: "crawn-db-ee4ce.firebaseapp.com",
     databaseURL: "https://crawn-db-ee4ce.firebaseio.com",
