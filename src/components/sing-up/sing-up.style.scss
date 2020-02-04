@@ -1,0 +1,14 @@
+.sign-up {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        margin: 2em 0;
+    }
+
+    .buttons {
+        display:flex;
+        justify-content: space-between;
+    }
+}
