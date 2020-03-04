@@ -10,8 +10,8 @@ const userReducer = (state = INITIAL_STATE, action) => {
                 currentUser: action.payload
             }
         default:
-            return state
+            return state;
     }
 }
 
-export default userReducer
+export default userReducer;

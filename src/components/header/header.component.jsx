@@ -31,8 +31,11 @@ const Header = ({ currentUser }) => (
     </div>
 )
 
+//allow us to access to state -> our root reducer
+//pass current user property
 const mapStateToProps = state => ({
     currentUser: state.user.currentUser
-})
+}); // root Reducer -> user reducer ex: initial null
 
 export default connect(mapStateToProps)(Header)
+
