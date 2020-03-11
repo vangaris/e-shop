@@ -6,12 +6,9 @@ import { Link } from 'react-router-dom'
 import { ReactComponent as Logo } from '../../assets/crown.svg'
 import { auth } from '../../firebase/firebase.utils'
 import CartIcon from '../cart-icon/cart-icon.component'
+import CartDropdown from '../../components/cart-dropdown/cartDropdonw.component'
 
-
-
-
-
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hidden }) => (
     <div className="header">
         <Link className='logo-container' to='/'>
             <Logo className="logo" />
@@ -28,15 +25,17 @@ const Header = ({ currentUser }) => (
                 ) : (
                         <Link className='option' to='/signin'> SIGN IN </Link>)
             }
+            <CartIcon />
         </div>
-        <CartIcon />
+        {hidden ? null : <CartDropdown />}
     </div>
 )
 
 //allow us to access to state -> our root reducer
 //pass current user property
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+    currentUser,
+    hidden
 }); // root Reducer -> user reducer ex: initial null
 
 export default connect(mapStateToProps)(Header)
