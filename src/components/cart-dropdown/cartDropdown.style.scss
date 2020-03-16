@@ -18,6 +18,16 @@
     overflow: scroll;
   }
 
+  .cart-items::-webkit-scrollbar {
+    width: 12px;
+  }
+   
+  .cart-items::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: rgba(80, 80, 80, 1);
+  }
+
   button {
     margin-top: auto;
   }
