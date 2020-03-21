@@ -13,34 +13,36 @@ import { selectCurrentUser } from '../../redux/user/user.selectors'
 
 
 const Header = ({ currentUser, hidden }) => (
-    <div className="header">
+    <div className='header'>
         <Link className='logo-container' to='/'>
-            <Logo className="logo" />
+            <Logo className='logo' />
         </Link>
-        <div className="options">
-            <Link to="/shop">
+        <div className='options'>
+            <Link className='option' to='/shop'>
                 SHOP
-            </Link>
-            <Link className="option" to='/contact'> CONTACT
-            </Link>
-            {
-                currentUser ? (
-                    <div className='option' onClick={() => auth.signOut()}> SIGNG OUT </div>
-                ) : (
-                        <Link className='option' to='/signin'> SIGN IN </Link>)
-            }
+        </Link>
+            <Link className='option' to='/shop'>
+                CONTACT
+        </Link>
+            {currentUser ? (
+                <div className='option' onClick={() => auth.signOut()}>
+                    SIGN OUT
+                </div>
+            ) : (
+                    <Link className='option' to='/signin'>
+                        SIGN IN
+                    </Link>
+                )}
             <CartIcon />
         </div>
         {hidden ? null : <CartDropdown />}
     </div>
-)
+);
 
-//allow us to access to state -> our root reducer
-//pass current user property
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
     hidden: selectCartHidden
-}); // root Reducer -> user reducer ex: initial null
+});
 
-export default connect(mapStateToProps)(Header)
+export default connect(mapStateToProps)(Header);
 
