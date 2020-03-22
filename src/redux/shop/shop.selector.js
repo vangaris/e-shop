@@ -12,3 +12,9 @@ export const selectCollection = collectionUrlParam =>
         [selectCollections],
         collections => collections[collectionUrlParam]
     )
+
+
+export const selectCollectionsForPreview = createSelector(
+    [selectCollections],
+    collections => Object.keys(collections).map(key => collections[key])
+)
